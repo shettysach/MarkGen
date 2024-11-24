@@ -1,8 +1,8 @@
 use pulldown_cmark::{html, Parser};
 use std::{fs, io::Write, path::Path};
 
-const HEADER: &str = include_str!("../template/header.html");
-const FOOTER: &str = include_str!("../template/footer.html");
+const HEADER: &str = include_str!("../template/header.txt");
+const FOOTER: &str = include_str!("../template/footer.txt");
 
 pub(crate) fn generate_page(content: &str) -> String {
     format!("{}\n{}\n{}", HEADER, content, FOOTER)

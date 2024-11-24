@@ -1,17 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap");
 
 :root {
   --dark-bg: #030f1a;
   --dark-accent: #1a2a42;
-  --light-text: #e0e0e0;
-  --link-color: #a3d3e9;
-  --light-bg: #24283b;
+  --light-text: #c8b6ff;
   --lighter-text: #c0caf5;
+  --link-color: #9b8cff;
   --highlight-color: #f1f1f1;
+  --horizontal-gap: 15rem;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Work Sans", sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--dark-bg);
@@ -23,10 +25,8 @@ body {
 
 main {
   flex: 1;
-  padding: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
+  padding: 1rem var(--horizontal-gap);
+  position: sticky;
 }
 
 a {
@@ -41,9 +41,8 @@ a:hover {
 header {
   background: linear-gradient(135deg, var(--dark-bg), var(--dark-accent));
   color: var(--light-text);
-  padding: 2rem 2rem;
+  padding: 2rem var(--horizontal-gap);
   position: sticky;
-  top: 0;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
   font-size: 1.5rem;
@@ -71,8 +70,8 @@ footer {
   background: linear-gradient(135deg, var(--dark-bg), var(--dark-accent));
   color: var(--light-text);
   text-align: center;
-  padding: 0;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.4);
+  font-size: 0.8rem; /* Reduce font size */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
 }
 
 footer a {
@@ -87,6 +86,7 @@ h1,
 h2,
 h3,
 h4 {
+  font-family: "Crimson Pro", serif;
   color: var(--highlight-color);
   margin-bottom: 1rem;
 }
@@ -97,15 +97,18 @@ p {
   margin-bottom: 1.5rem;
 }
 
-pre,
-code {
-  font-family: "Consolas", monospace;
-  line-height: 150%;
-  background-color: var(--light-bg);
+pre {
+  font-family: "JetBrains Mono", monospace;
+  background-color: var(--dark-accent);
   color: var(--highlight-color);
-  padding: 5px;
+  padding: 10px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  overflow-x: auto;
 }
 
-pre {
-  overflow-x: auto;
+code {
+  font-family: inherit; /* Inherit font from pre if nested */
+  background-color: inherit; /* Match the parent element */
+  color: inherit;
 }
